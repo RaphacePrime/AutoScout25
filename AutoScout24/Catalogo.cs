@@ -172,6 +172,7 @@ namespace AutoScout24
             int nuovosaldo1 = Int32.Parse(label2.Text);Console.WriteLine(label2);
             int nuovosaldo2 = Int32.Parse(totalecosto.Text); Console.WriteLine(totalecosto);           
             int nuovosaldo = nuovosaldo1 - nuovosaldo2;
+            //MessageBox.Show("Il tuo nuovo saldo: " + nuovosaldo);
             DialogResult dr = MessageBox.Show("CONFERMA DI ACQUISTO", "Sei sicuro di voler acquistare i " +
                 "prodotti nel carrello?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
             if (dr == DialogResult.Yes)
@@ -187,14 +188,14 @@ namespace AutoScout24
                         rigaprodotto.prezzo, rigaprodotto.username);               
                     AggiornaProdotti();
                 }
-                MazzoLuzziDataSet.UtentiRow rigautente = mazzoLuzziDataSet.Utenti.FindByusername(fu_labelutente.Text);                
+                MazzoLuzziDataSet.UtentiRow rigautente = mazzoLuzziDataSet.Utenti.FindByusername(U.username);
                 rigautente.saldo = nuovosaldo;
-                rigautente["saldo"] = nuovosaldo;
+                //rigautente["saldo"] = nuovosaldo;
                 mazzoLuzziDataSet.Utenti.AcceptChanges();
                 MessageBox.Show("Il tuo nuovo saldo: " + rigautente.saldo);
-                mazzoLuzziDataSet.Utenti.AddUtentiRow(rigautente);
+                //mazzoLuzziDataSet.Utenti.AddUtentiRow(rigautente);
                 AggiornaUtenti();                           
-                mazzoLuzziDataSet.AcceptChanges();
+                //mazzoLuzziDataSet.AcceptChanges();
                 aggiornainterfaccia();
             }
             else if (dr == DialogResult.Cancel)
@@ -213,11 +214,14 @@ namespace AutoScout24
 
         private void AggiornaUtenti()
         {
+            this.Validate();
+            this.utentiBindingSource.EndEdit();
+            this.utentiTableAdapter.Update(mazzoLuzziDataSet);
             this.utentiTableAdapter.Fill(this.mazzoLuzziDataSet.Utenti);
             utentiBindingSource.ResetBindings(true);
-            tableAdapterManager.UpdateAll(mazzoLuzziDataSet);            
-            mazzoLuzziDataSet.Utenti.AcceptChanges();
-            mazzoLuzziDataSet.AcceptChanges();
+           //tableAdapterManager.UpdateAll(mazzoLuzziDataSet);            
+            //mazzoLuzziDataSet.Utenti.AcceptChanges();
+           // mazzoLuzziDataSet.AcceptChanges();
 
         }
         public void outputrigautente(MazzoLuzziDataSet.UtentiRow riga)
