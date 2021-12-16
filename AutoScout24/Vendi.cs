@@ -23,14 +23,14 @@ namespace AutoScout24
         private void button2_Click(object sender, EventArgs e)
         {
             string cp = textBox1.Text;
-            string mar = textBox1.Text;
-            int c = Int32.Parse(textBox1.Text);
-            string d1 = textBox1.Text;
+            string mar = textBox2.Text;
+            int c = Int32.Parse(textBox3.Text);
+            string d1 = textBox4.Text;
             float mod = float.Parse(d1);
-            string tip = textBox1.Text;
-            int nk = Int32.Parse(textBox1.Text); 
-            string url = textBox1.Text;
-            string imm = monthCalendar1.ToString();
+            string tip = comboBox1.Text;
+            int nk = Int32.Parse(textBox6.Text); 
+            string url = textBox7.Text;
+            string imm = dataImmatricolazionePicker.ToString();
             string u = U.username;
             Prodotto P= new Prodotto(cp,c,mar,mod,tip,nk,url,imm,u);
             MazzoLuzziDataSet.ProdottiRow nuovoprodotto = mazzoLuzziDataSet.Prodotti.NewProdottiRow();
@@ -43,15 +43,16 @@ namespace AutoScout24
             nuovoprodotto.tipologia = P.tipologia;
             nuovoprodotto.url = P.url;
             nuovoprodotto.username = P.username;
-            nuovoprodotto.immatricolazione = monthCalendar1.TodayDate;
+            nuovoprodotto.immatricolazione = dataImmatricolazionePicker.Value;
             this.prodottiTableAdapter.Insert(nuovoprodotto.codiceprodotto, nuovoprodotto.marca, nuovoprodotto.cilindrata, nuovoprodotto.modello, nuovoprodotto.tipologia, nuovoprodotto.n_chilometro,
-                nuovoprodotto.url, nuovoprodotto.immatricolazione, nuovoprodotto.prezzo, nuovoprodotto.username);
-
+                nuovoprodotto.url, nuovoprodotto.immatricolazione, nuovoprodotto.prezzo, nuovoprodotto.username);   
 
             //    MazzoLuzziDataSet.UtentiRow rigautentenuova = mazzoLuzziDataSet.Utenti.NewUtentiRow();
             //rigautentenuova.nomecognome = rigautente.nomecognome; rigautentenuova.codicefiscale = rigautente.codicefiscale; rigautentenuova.password = rigautente.password; rigautentenuova.username = rigautente.username; rigautentenuova.saldo = nuovosaldo;
             AggiornaProdotti();
             mazzoLuzziDataSet.AcceptChanges();
+            MessageBox.Show("Auto inserita correttamente");
+            this.Close();
         }
         private void AggiornaProdotti()
         {
