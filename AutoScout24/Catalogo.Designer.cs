@@ -73,6 +73,7 @@ namespace AutoScout24
             this.carrello = new System.Windows.Forms.Button();
             this.GroupBoxCarrello = new System.Windows.Forms.GroupBox();
             this.groupBoxCatalogo = new System.Windows.Forms.GroupBox();
+            this.labelEuro = new System.Windows.Forms.Label();
             marcaLabel = new System.Windows.Forms.Label();
             modelloLabel = new System.Windows.Forms.Label();
             tipologiaLabel = new System.Windows.Forms.Label();
@@ -275,9 +276,9 @@ namespace AutoScout24
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(619, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 10;
-            this.label1.Text = "saldo:";
+            this.label1.Text = "saldo: €";
             // 
             // fu_saldo
             // 
@@ -291,7 +292,7 @@ namespace AutoScout24
             // fu_indice
             // 
             this.fu_indice.AutoSize = true;
-            this.fu_indice.Location = new System.Drawing.Point(36, 238);
+            this.fu_indice.Location = new System.Drawing.Point(1085, 107);
             this.fu_indice.Name = "fu_indice";
             this.fu_indice.Size = new System.Drawing.Size(13, 13);
             this.fu_indice.TabIndex = 12;
@@ -310,7 +311,7 @@ namespace AutoScout24
             // 
             this.codiceprodottoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.prodottiBindingSource, "codiceprodotto", true));
             this.codiceprodottoTextBox.Enabled = false;
-            this.codiceprodottoTextBox.Location = new System.Drawing.Point(9, 253);
+            this.codiceprodottoTextBox.Location = new System.Drawing.Point(1058, 122);
             this.codiceprodottoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.codiceprodottoTextBox.Name = "codiceprodottoTextBox";
             this.codiceprodottoTextBox.Size = new System.Drawing.Size(68, 20);
@@ -444,7 +445,7 @@ namespace AutoScout24
             this.carrello.BackgroundImage = global::AutoScout24.Properties.Resources.carrello;
             this.carrello.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.carrello.ForeColor = System.Drawing.Color.Transparent;
-            this.carrello.Location = new System.Drawing.Point(674, 208);
+            this.carrello.Location = new System.Drawing.Point(693, 176);
             this.carrello.Margin = new System.Windows.Forms.Padding(2);
             this.carrello.Name = "carrello";
             this.carrello.Size = new System.Drawing.Size(61, 57);
@@ -471,19 +472,18 @@ namespace AutoScout24
             // 
             // groupBoxCatalogo
             // 
+            this.groupBoxCatalogo.Controls.Add(this.labelEuro);
             this.groupBoxCatalogo.Controls.Add(this.fu_labelutente);
             this.groupBoxCatalogo.Controls.Add(this.carrello);
             this.groupBoxCatalogo.Controls.Add(this.label4);
             this.groupBoxCatalogo.Controls.Add(this.prodottiBindingNavigator);
             this.groupBoxCatalogo.Controls.Add(this.prezzoTextBox);
             this.groupBoxCatalogo.Controls.Add(this.marcaTextBox);
-            this.groupBoxCatalogo.Controls.Add(this.codiceprodottoTextBox);
             this.groupBoxCatalogo.Controls.Add(marcaLabel);
             this.groupBoxCatalogo.Controls.Add(urlLabel);
             this.groupBoxCatalogo.Controls.Add(this.modelloTextBox);
             this.groupBoxCatalogo.Controls.Add(this.urlTextBox);
             this.groupBoxCatalogo.Controls.Add(modelloLabel);
-            this.groupBoxCatalogo.Controls.Add(this.fu_indice);
             this.groupBoxCatalogo.Controls.Add(this.tipologiaTextBox);
             this.groupBoxCatalogo.Controls.Add(this.fu_saldo);
             this.groupBoxCatalogo.Controls.Add(tipologiaLabel);
@@ -496,14 +496,25 @@ namespace AutoScout24
             this.groupBoxCatalogo.TabIndex = 30;
             this.groupBoxCatalogo.TabStop = false;
             // 
+            // labelEuro
+            // 
+            this.labelEuro.AutoSize = true;
+            this.labelEuro.Location = new System.Drawing.Point(526, 319);
+            this.labelEuro.Name = "labelEuro";
+            this.labelEuro.Size = new System.Drawing.Size(13, 13);
+            this.labelEuro.TabIndex = 31;
+            this.labelEuro.Text = "€";
+            // 
             // Catalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(822, 459);
+            this.ClientSize = new System.Drawing.Size(809, 459);
             this.Controls.Add(this.groupBoxCatalogo);
             this.Controls.Add(this.GroupBoxCarrello);
+            this.Controls.Add(this.codiceprodottoTextBox);
+            this.Controls.Add(this.fu_indice);
             this.Name = "Catalogo";
             this.Text = "Catalogo";
             this.Load += new System.EventHandler(this.Catalogo_Load);
@@ -519,6 +530,7 @@ namespace AutoScout24
             this.groupBoxCatalogo.ResumeLayout(false);
             this.groupBoxCatalogo.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -562,5 +574,6 @@ namespace AutoScout24
         private System.Windows.Forms.Button back;
         private System.Windows.Forms.GroupBox GroupBoxCarrello;
         private System.Windows.Forms.GroupBox groupBoxCatalogo;
+        private System.Windows.Forms.Label labelEuro;
     }
 }
