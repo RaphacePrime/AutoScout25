@@ -72,6 +72,8 @@ namespace AutoScout24
 
         private void carrello_Click(object sender, EventArgs e)
         {
+            groupBoxCatalogo.Hide();
+            GroupBoxCarrello.Show();
             checkedListBox1.Items.Clear();
             foreach(var elemento in ListP)
             {
@@ -164,7 +166,9 @@ namespace AutoScout24
         }
 
         private void acquista_Click(object sender, EventArgs e)
-        {            
+        {
+            
+            // switchschermata();
             int nuovosaldo1 = Int32.Parse(label2.Text);Console.WriteLine(label2);
             int nuovosaldo2 = Int32.Parse(totalecosto.Text); Console.WriteLine(totalecosto);           
             int nuovosaldo = nuovosaldo1 - nuovosaldo2;
@@ -189,8 +193,7 @@ namespace AutoScout24
                 mazzoLuzziDataSet.Utenti.AcceptChanges();
                 MessageBox.Show("Il tuo nuovo saldo: " + rigautente.saldo);
                 mazzoLuzziDataSet.Utenti.AddUtentiRow(rigautente);
-                AggiornaUtenti();
-                AggiornaUtenti();                               
+                AggiornaUtenti();                           
                 mazzoLuzziDataSet.AcceptChanges();
                 aggiornainterfaccia();
             }
@@ -227,7 +230,26 @@ namespace AutoScout24
                     riga.n_chilometro + riga.url + riga.immatricolazione.ToString() + riga.username);
         }
 
-       
+       /* public void switchschermata()
+        {
+            if(groupBoxCatalogo.Visible==true)
+            {
+                groupBoxCatalogo.Visible = false;
+                GroupBoxCarrello.Visible = true;
+            }
+            else
+            {
+                groupBoxCatalogo.Visible = true;
+                GroupBoxCarrello.Visible = false;
+            }
+        }*/
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            groupBoxCatalogo.Show();
+            GroupBoxCarrello.Hide();
+            //switchschermata();
+        }
     }
 }
 //DataRow rigautentenuova = mazzoLuzziDataSet.Utenti.NewRow();

@@ -66,10 +66,13 @@ namespace AutoScout24
             this.utentiTableAdapter = new AutoScout24.MazzoLuzziDataSetTableAdapters.UtentiTableAdapter();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.carrello = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.back = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.carrello = new System.Windows.Forms.Button();
+            this.GroupBoxCarrello = new System.Windows.Forms.GroupBox();
+            this.groupBoxCatalogo = new System.Windows.Forms.GroupBox();
             marcaLabel = new System.Windows.Forms.Label();
             modelloLabel = new System.Windows.Forms.Label();
             tipologiaLabel = new System.Windows.Forms.Label();
@@ -80,12 +83,14 @@ namespace AutoScout24
             this.prodottiBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.utentiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.GroupBoxCarrello.SuspendLayout();
+            this.groupBoxCatalogo.SuspendLayout();
             this.SuspendLayout();
             // 
             // marcaLabel
             // 
             marcaLabel.AutoSize = true;
-            marcaLabel.Location = new System.Drawing.Point(145, 71);
+            marcaLabel.Location = new System.Drawing.Point(139, 76);
             marcaLabel.Name = "marcaLabel";
             marcaLabel.Size = new System.Drawing.Size(39, 13);
             marcaLabel.TabIndex = 1;
@@ -94,7 +99,7 @@ namespace AutoScout24
             // modelloLabel
             // 
             modelloLabel.AutoSize = true;
-            modelloLabel.Location = new System.Drawing.Point(308, 71);
+            modelloLabel.Location = new System.Drawing.Point(302, 76);
             modelloLabel.Name = "modelloLabel";
             modelloLabel.Size = new System.Drawing.Size(46, 13);
             modelloLabel.TabIndex = 3;
@@ -103,7 +108,7 @@ namespace AutoScout24
             // tipologiaLabel
             // 
             tipologiaLabel.AutoSize = true;
-            tipologiaLabel.Location = new System.Drawing.Point(491, 71);
+            tipologiaLabel.Location = new System.Drawing.Point(485, 76);
             tipologiaLabel.Name = "tipologiaLabel";
             tipologiaLabel.Size = new System.Drawing.Size(49, 13);
             tipologiaLabel.TabIndex = 5;
@@ -112,7 +117,7 @@ namespace AutoScout24
             // urlLabel
             // 
             urlLabel.AutoSize = true;
-            urlLabel.Location = new System.Drawing.Point(8, 422);
+            urlLabel.Location = new System.Drawing.Point(2, 427);
             urlLabel.Name = "urlLabel";
             urlLabel.Size = new System.Drawing.Size(21, 13);
             urlLabel.TabIndex = 13;
@@ -155,7 +160,7 @@ namespace AutoScout24
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorSeparator2});
-            this.prodottiBindingNavigator.Location = new System.Drawing.Point(299, 322);
+            this.prodottiBindingNavigator.Location = new System.Drawing.Point(293, 327);
             this.prodottiBindingNavigator.MoveFirstItem = null;
             this.prodottiBindingNavigator.MoveLastItem = null;
             this.prodottiBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -222,7 +227,8 @@ namespace AutoScout24
             // marcaTextBox
             // 
             this.marcaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.prodottiBindingSource, "marca", true));
-            this.marcaTextBox.Location = new System.Drawing.Point(190, 68);
+            this.marcaTextBox.Enabled = false;
+            this.marcaTextBox.Location = new System.Drawing.Point(184, 73);
             this.marcaTextBox.Name = "marcaTextBox";
             this.marcaTextBox.Size = new System.Drawing.Size(100, 20);
             this.marcaTextBox.TabIndex = 2;
@@ -230,7 +236,8 @@ namespace AutoScout24
             // modelloTextBox
             // 
             this.modelloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.prodottiBindingSource, "modello", true));
-            this.modelloTextBox.Location = new System.Drawing.Point(360, 68);
+            this.modelloTextBox.Enabled = false;
+            this.modelloTextBox.Location = new System.Drawing.Point(354, 73);
             this.modelloTextBox.Name = "modelloTextBox";
             this.modelloTextBox.Size = new System.Drawing.Size(100, 20);
             this.modelloTextBox.TabIndex = 4;
@@ -238,14 +245,15 @@ namespace AutoScout24
             // tipologiaTextBox
             // 
             this.tipologiaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.prodottiBindingSource, "tipologia", true));
-            this.tipologiaTextBox.Location = new System.Drawing.Point(546, 68);
+            this.tipologiaTextBox.Enabled = false;
+            this.tipologiaTextBox.Location = new System.Drawing.Point(540, 73);
             this.tipologiaTextBox.Name = "tipologiaTextBox";
             this.tipologiaTextBox.Size = new System.Drawing.Size(100, 20);
             this.tipologiaTextBox.TabIndex = 6;
             // 
             // fu_aggiungicarrello
             // 
-            this.fu_aggiungicarrello.Location = new System.Drawing.Point(275, 365);
+            this.fu_aggiungicarrello.Location = new System.Drawing.Point(269, 370);
             this.fu_aggiungicarrello.Name = "fu_aggiungicarrello";
             this.fu_aggiungicarrello.Size = new System.Drawing.Size(228, 37);
             this.fu_aggiungicarrello.TabIndex = 8;
@@ -256,17 +264,16 @@ namespace AutoScout24
             // fu_labelutente
             // 
             this.fu_labelutente.AutoSize = true;
-            this.fu_labelutente.Location = new System.Drawing.Point(12, 9);
+            this.fu_labelutente.Location = new System.Drawing.Point(6, 14);
             this.fu_labelutente.Name = "fu_labelutente";
             this.fu_labelutente.Size = new System.Drawing.Size(39, 13);
             this.fu_labelutente.TabIndex = 9;
             this.fu_labelutente.Text = "Utente";
-            
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(625, 9);
+            this.label1.Location = new System.Drawing.Point(619, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 10;
@@ -275,7 +282,7 @@ namespace AutoScout24
             // fu_saldo
             // 
             this.fu_saldo.AutoSize = true;
-            this.fu_saldo.Location = new System.Drawing.Point(677, 9);
+            this.fu_saldo.Location = new System.Drawing.Point(671, 14);
             this.fu_saldo.Name = "fu_saldo";
             this.fu_saldo.Size = new System.Drawing.Size(28, 13);
             this.fu_saldo.TabIndex = 11;
@@ -284,7 +291,7 @@ namespace AutoScout24
             // fu_indice
             // 
             this.fu_indice.AutoSize = true;
-            this.fu_indice.Location = new System.Drawing.Point(42, 233);
+            this.fu_indice.Location = new System.Drawing.Point(36, 238);
             this.fu_indice.Name = "fu_indice";
             this.fu_indice.Size = new System.Drawing.Size(13, 13);
             this.fu_indice.TabIndex = 12;
@@ -293,7 +300,8 @@ namespace AutoScout24
             // urlTextBox
             // 
             this.urlTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.prodottiBindingSource, "url", true));
-            this.urlTextBox.Location = new System.Drawing.Point(35, 419);
+            this.urlTextBox.Enabled = false;
+            this.urlTextBox.Location = new System.Drawing.Point(29, 424);
             this.urlTextBox.Name = "urlTextBox";
             this.urlTextBox.Size = new System.Drawing.Size(711, 20);
             this.urlTextBox.TabIndex = 14;
@@ -301,7 +309,8 @@ namespace AutoScout24
             // codiceprodottoTextBox
             // 
             this.codiceprodottoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.prodottiBindingSource, "codiceprodotto", true));
-            this.codiceprodottoTextBox.Location = new System.Drawing.Point(15, 248);
+            this.codiceprodottoTextBox.Enabled = false;
+            this.codiceprodottoTextBox.Location = new System.Drawing.Point(9, 253);
             this.codiceprodottoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.codiceprodottoTextBox.Name = "codiceprodottoTextBox";
             this.codiceprodottoTextBox.Size = new System.Drawing.Size(68, 20);
@@ -310,7 +319,7 @@ namespace AutoScout24
             // 
             // acquista
             // 
-            this.acquista.Location = new System.Drawing.Point(1449, 344);
+            this.acquista.Location = new System.Drawing.Point(143, 331);
             this.acquista.Name = "acquista";
             this.acquista.Size = new System.Drawing.Size(228, 37);
             this.acquista.TabIndex = 19;
@@ -321,7 +330,7 @@ namespace AutoScout24
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(1410, 77);
+            this.checkedListBox1.Location = new System.Drawing.Point(91, 68);
             this.checkedListBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(302, 139);
@@ -329,7 +338,7 @@ namespace AutoScout24
             // 
             // eliminazionedacarrello
             // 
-            this.eliminazionedacarrello.Location = new System.Drawing.Point(1449, 222);
+            this.eliminazionedacarrello.Location = new System.Drawing.Point(143, 219);
             this.eliminazionedacarrello.Name = "eliminazionedacarrello";
             this.eliminazionedacarrello.Size = new System.Drawing.Size(228, 19);
             this.eliminazionedacarrello.TabIndex = 21;
@@ -341,7 +350,7 @@ namespace AutoScout24
             // 
             this.totalecosto.AutoSize = true;
             this.totalecosto.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalecosto.Location = new System.Drawing.Point(1545, 310);
+            this.totalecosto.Location = new System.Drawing.Point(229, 281);
             this.totalecosto.Name = "totalecosto";
             this.totalecosto.Size = new System.Drawing.Size(54, 26);
             this.totalecosto.TabIndex = 22;
@@ -350,7 +359,8 @@ namespace AutoScout24
             // prezzoTextBox
             // 
             this.prezzoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.prodottiBindingSource, "prezzo", true));
-            this.prezzoTextBox.Location = new System.Drawing.Point(546, 311);
+            this.prezzoTextBox.Enabled = false;
+            this.prezzoTextBox.Location = new System.Drawing.Point(540, 316);
             this.prezzoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.prezzoTextBox.Name = "prezzoTextBox";
             this.prezzoTextBox.Size = new System.Drawing.Size(93, 20);
@@ -368,7 +378,7 @@ namespace AutoScout24
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1397, 419);
+            this.label2.Location = new System.Drawing.Point(140, 411);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 13);
             this.label2.TabIndex = 25;
@@ -377,17 +387,51 @@ namespace AutoScout24
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1345, 419);
+            this.label3.Location = new System.Drawing.Point(88, 411);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 24;
             this.label3.Text = "saldo:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(298, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(146, 37);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Catalogo";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(166, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(129, 37);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Carrello";
+            // 
+            // back
+            // 
+            this.back.BackColor = System.Drawing.Color.Transparent;
+            this.back.BackgroundImage = global::AutoScout24.Properties.Resources.Back;
+            this.back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.back.ForeColor = System.Drawing.Color.Transparent;
+            this.back.Location = new System.Drawing.Point(26, 200);
+            this.back.Margin = new System.Windows.Forms.Padding(2);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(61, 57);
+            this.back.TabIndex = 28;
+            this.back.UseVisualStyleBackColor = false;
+            this.back.Click += new System.EventHandler(this.back_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox1.Location = new System.Drawing.Point(148, 105);
+            this.pictureBox1.Location = new System.Drawing.Point(142, 110);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(498, 205);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -400,7 +444,7 @@ namespace AutoScout24
             this.carrello.BackgroundImage = global::AutoScout24.Properties.Resources.carrello;
             this.carrello.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.carrello.ForeColor = System.Drawing.Color.Transparent;
-            this.carrello.Location = new System.Drawing.Point(680, 203);
+            this.carrello.Location = new System.Drawing.Point(674, 208);
             this.carrello.Margin = new System.Windows.Forms.Padding(2);
             this.carrello.Name = "carrello";
             this.carrello.Size = new System.Drawing.Size(61, 57);
@@ -408,58 +452,58 @@ namespace AutoScout24
             this.carrello.UseVisualStyleBackColor = false;
             this.carrello.Click += new System.EventHandler(this.carrello_Click);
             // 
-            // label4
+            // GroupBoxCarrello
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(304, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(146, 37);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Catalogo";
+            this.GroupBoxCarrello.Controls.Add(this.label5);
+            this.GroupBoxCarrello.Controls.Add(this.back);
+            this.GroupBoxCarrello.Controls.Add(this.acquista);
+            this.GroupBoxCarrello.Controls.Add(this.checkedListBox1);
+            this.GroupBoxCarrello.Controls.Add(this.eliminazionedacarrello);
+            this.GroupBoxCarrello.Controls.Add(this.label2);
+            this.GroupBoxCarrello.Controls.Add(this.totalecosto);
+            this.GroupBoxCarrello.Controls.Add(this.label3);
+            this.GroupBoxCarrello.Location = new System.Drawing.Point(209, 3);
+            this.GroupBoxCarrello.Name = "GroupBoxCarrello";
+            this.GroupBoxCarrello.Size = new System.Drawing.Size(425, 444);
+            this.GroupBoxCarrello.TabIndex = 29;
+            this.GroupBoxCarrello.TabStop = false;
+            this.GroupBoxCarrello.Visible = false;
             // 
-            // label5
+            // groupBoxCatalogo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1493, 8);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 37);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Carrello";
+            this.groupBoxCatalogo.Controls.Add(this.fu_labelutente);
+            this.groupBoxCatalogo.Controls.Add(this.carrello);
+            this.groupBoxCatalogo.Controls.Add(this.label4);
+            this.groupBoxCatalogo.Controls.Add(this.prodottiBindingNavigator);
+            this.groupBoxCatalogo.Controls.Add(this.prezzoTextBox);
+            this.groupBoxCatalogo.Controls.Add(this.marcaTextBox);
+            this.groupBoxCatalogo.Controls.Add(this.codiceprodottoTextBox);
+            this.groupBoxCatalogo.Controls.Add(marcaLabel);
+            this.groupBoxCatalogo.Controls.Add(urlLabel);
+            this.groupBoxCatalogo.Controls.Add(this.modelloTextBox);
+            this.groupBoxCatalogo.Controls.Add(this.urlTextBox);
+            this.groupBoxCatalogo.Controls.Add(modelloLabel);
+            this.groupBoxCatalogo.Controls.Add(this.fu_indice);
+            this.groupBoxCatalogo.Controls.Add(this.tipologiaTextBox);
+            this.groupBoxCatalogo.Controls.Add(this.fu_saldo);
+            this.groupBoxCatalogo.Controls.Add(tipologiaLabel);
+            this.groupBoxCatalogo.Controls.Add(this.label1);
+            this.groupBoxCatalogo.Controls.Add(this.pictureBox1);
+            this.groupBoxCatalogo.Controls.Add(this.fu_aggiungicarrello);
+            this.groupBoxCatalogo.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxCatalogo.Name = "groupBoxCatalogo";
+            this.groupBoxCatalogo.Size = new System.Drawing.Size(781, 450);
+            this.groupBoxCatalogo.TabIndex = 30;
+            this.groupBoxCatalogo.TabStop = false;
             // 
             // Catalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1739, 459);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.prezzoTextBox);
-            this.Controls.Add(this.totalecosto);
-            this.Controls.Add(this.eliminazionedacarrello);
-            this.Controls.Add(this.checkedListBox1);
-            this.Controls.Add(this.acquista);
-            this.Controls.Add(this.codiceprodottoTextBox);
-            this.Controls.Add(urlLabel);
-            this.Controls.Add(this.urlTextBox);
-            this.Controls.Add(this.fu_indice);
-            this.Controls.Add(this.fu_saldo);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.fu_labelutente);
-            this.Controls.Add(this.fu_aggiungicarrello);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(tipologiaLabel);
-            this.Controls.Add(this.tipologiaTextBox);
-            this.Controls.Add(modelloLabel);
-            this.Controls.Add(this.modelloTextBox);
-            this.Controls.Add(marcaLabel);
-            this.Controls.Add(this.marcaTextBox);
-            this.Controls.Add(this.prodottiBindingNavigator);
-            this.Controls.Add(this.carrello);
+            this.ClientSize = new System.Drawing.Size(822, 459);
+            this.Controls.Add(this.groupBoxCatalogo);
+            this.Controls.Add(this.GroupBoxCarrello);
             this.Name = "Catalogo";
             this.Text = "Catalogo";
             this.Load += new System.EventHandler(this.Catalogo_Load);
@@ -470,8 +514,11 @@ namespace AutoScout24
             this.prodottiBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.utentiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.GroupBoxCarrello.ResumeLayout(false);
+            this.GroupBoxCarrello.PerformLayout();
+            this.groupBoxCatalogo.ResumeLayout(false);
+            this.groupBoxCatalogo.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -512,5 +559,8 @@ namespace AutoScout24
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button back;
+        private System.Windows.Forms.GroupBox GroupBoxCarrello;
+        private System.Windows.Forms.GroupBox groupBoxCatalogo;
     }
 }

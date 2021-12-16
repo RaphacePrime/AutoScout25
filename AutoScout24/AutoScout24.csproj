@@ -151,6 +151,7 @@
     <Content Include="MazzoLuzzi.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Back.png" />
     <None Include="Resources\carrello.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
