@@ -204,9 +204,11 @@ namespace AutoScout24
                 this.utentiTableAdapter.Delete(a, b, c, d, ef);
                 this.utentiTableAdapter.Insert(a, b, c, d, nuovosaldo);
                 
-                AggiornaUtenti();                           
-                
+                AggiornaUtenti();
+                memvolatile.Clear();
+                ListP.Clear();
                 aggiornainterfaccia();
+                
             }
             else if (dr == DialogResult.Cancel)
             {
