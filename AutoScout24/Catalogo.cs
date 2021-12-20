@@ -189,13 +189,23 @@ namespace AutoScout24
                     AggiornaProdotti();
                 }
                 MazzoLuzziDataSet.UtentiRow rigautente = mazzoLuzziDataSet.Utenti.FindByusername(U.username);
-                rigautente.saldo = nuovosaldo;
-                //rigautente["saldo"] = nuovosaldo;
+                
+                
                 mazzoLuzziDataSet.Utenti.AcceptChanges();
-                MessageBox.Show("Il tuo nuovo saldo: " + rigautente.saldo);
-                //mazzoLuzziDataSet.Utenti.AddUtentiRow(rigautente);
+                MessageBox.Show("Il tuo nuovo saldo: " + nuovosaldo);
+
+
+
+                string a = rigautente.username;
+                string b = rigautente.nomecognome;
+                string c = rigautente.codicefiscale;
+                string d = rigautente.password;
+                int ef = rigautente.saldo;
+                this.utentiTableAdapter.Delete(a, b, c, d, ef);
+                this.utentiTableAdapter.Insert(a, b, c, d, nuovosaldo);
+                
                 AggiornaUtenti();                           
-                //mazzoLuzziDataSet.AcceptChanges();
+                
                 aggiornainterfaccia();
             }
             else if (dr == DialogResult.Cancel)
