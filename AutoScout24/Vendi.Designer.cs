@@ -50,6 +50,7 @@ namespace AutoScout24
             this.prodottiTableAdapter = new AutoScout24.MazzoLuzziDataSetTableAdapters.ProdottiTableAdapter();
             this.tableAdapterManager = new AutoScout24.MazzoLuzziDataSetTableAdapters.TableAdapterManager();
             this.dataImmatricolazionePicker = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mazzoLuzziDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottiBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -180,7 +181,7 @@ namespace AutoScout24
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(192, 298);
+            this.button2.Location = new System.Drawing.Point(314, 289);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(301, 67);
             this.button2.TabIndex = 17;
@@ -216,12 +217,23 @@ namespace AutoScout24
             this.dataImmatricolazionePicker.Size = new System.Drawing.Size(200, 20);
             this.dataImmatricolazionePicker.TabIndex = 18;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(262, 26);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(373, 39);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "VENDI LA TUA AUTO";
+            // 
             // Vendi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(904, 439);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.dataImmatricolazionePicker);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox1);
@@ -272,5 +284,6 @@ namespace AutoScout24
         private MazzoLuzziDataSetTableAdapters.ProdottiTableAdapter prodottiTableAdapter;
         private MazzoLuzziDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DateTimePicker dataImmatricolazionePicker;
+        private System.Windows.Forms.Label label9;
     }
 }

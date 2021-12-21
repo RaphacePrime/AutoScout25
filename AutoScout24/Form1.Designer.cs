@@ -56,12 +56,15 @@ namespace AutoScout24
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.utentiBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.usernameTextBox = new System.Windows.Forms.TextBox();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             usernameLabel = new System.Windows.Forms.Label();
             passwordLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mazzoLuzziDataSet)).BeginInit();
@@ -249,6 +252,7 @@ namespace AutoScout24
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(35, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -291,24 +295,6 @@ namespace AutoScout24
             this.utentiBindingNavigatorSaveItem.Text = "Salva dati";
             this.utentiBindingNavigatorSaveItem.Click += new System.EventHandler(this.utentiBindingNavigatorSaveItem_Click);
             // 
-            // usernameTextBox
-            // 
-            this.usernameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.utentiBindingSource, "username", true));
-            this.usernameTextBox.Location = new System.Drawing.Point(320, 238);
-            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(229, 20);
-            this.usernameTextBox.TabIndex = 8;
-            // 
-            // passwordTextBox
-            // 
-            this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.utentiBindingSource, "password", true));
-            this.passwordTextBox.Location = new System.Drawing.Point(320, 262);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(235, 20);
-            this.passwordTextBox.TabIndex = 10;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -333,10 +319,10 @@ namespace AutoScout24
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Rubik", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(254, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(349, 57);
+            this.label4.Size = new System.Drawing.Size(311, 55);
             this.label4.TabIndex = 13;
             this.label4.Text = "AutoScout25";
             // 
@@ -350,20 +336,69 @@ namespace AutoScout24
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 290);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(273, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Per accedere a SFOGLIA CATALOGO e VENDI AUTO: ";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 314);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(134, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Username : RaphacePrime";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(152, 314);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(103, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Password: Raphace";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(560, 290);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(241, 13);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Per accedere ad ADMIN PRODOTTI e UTENTI: ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(560, 314);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(151, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Username e Password: alunno";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(858, 450);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(passwordLabel);
-            this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(usernameLabel);
-            this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.utentiBindingNavigator);
             this.Controls.Add(this.f1_password);
             this.Controls.Add(this.f1_username);
@@ -409,12 +444,15 @@ namespace AutoScout24
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton utentiBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox usernameTextBox;
-        private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
 
