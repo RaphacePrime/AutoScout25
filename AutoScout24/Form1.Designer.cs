@@ -144,6 +144,7 @@ namespace AutoScout24
             // 
             this.f1_password.Location = new System.Drawing.Point(423, 182);
             this.f1_password.Name = "f1_password";
+            this.f1_password.PasswordChar = '*';
             this.f1_password.Size = new System.Drawing.Size(100, 20);
             this.f1_password.TabIndex = 5;
             // 
@@ -360,9 +361,9 @@ namespace AutoScout24
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(152, 314);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 13);
+            this.label7.Size = new System.Drawing.Size(98, 13);
             this.label7.TabIndex = 17;
-            this.label7.Text = "Password: Raphace";
+            this.label7.Text = "Password: raphace";
             // 
             // label8
             // 
@@ -387,7 +388,7 @@ namespace AutoScout24
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(858, 450);
+            this.ClientSize = new System.Drawing.Size(826, 450);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
